@@ -85,7 +85,7 @@ export default function Home() {
             Meet Your AI Dream Team.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Nesti AI's virtual agents work 24/7 to qualify leads, match clients, and nurture deals.
+            Nesti AI&apos;s virtual agents work 24/7 to qualify leads, match clients, and nurture deals.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -320,7 +320,7 @@ export default function Home() {
                   <span key={i} className="text-primary text-xl">★</span>
                 ))}
               </div>
-              <p className="text-gray-600 mb-4">"{testimonial.quote}"</p>
+              <p className="text-gray-600 mb-4">&quot;{testimonial.quote}&quot;</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gray-300"></div>
                 <div>

@@ -54,7 +54,7 @@ export default function SSRTestPage() {
             </h3>
             <ol className="list-decimal list-inside space-y-2 text-gray-700">
               <li>
-                <strong>View Page Source:</strong> Right-click → "View Page Source" 
+                <strong>View Page Source:</strong> Right-click → &quot;View Page Source&quot; 
                 (you should see the HTML content pre-rendered)
               </li>
               <li>
@@ -63,7 +63,7 @@ export default function SSRTestPage() {
               </li>
               <li>
                 <strong>Disable JavaScript:</strong> The page still displays content 
-                because it's server-rendered
+                because it&apos;s server-rendered
               </li>
               <li>
                 <strong>Refresh the page:</strong> The random number changes on each 
@@ -90,7 +90,7 @@ export default function SSRTestPage() {
             </h3>
             <p className="text-gray-700">
               If you need client-side interactivity (useState, useEffect, event handlers),
-              you must add <code className="bg-gray-200 px-2 py-1 rounded">"use client"</code> at the top of the file.
+              you must add <code className="bg-gray-200 px-2 py-1 rounded">&quot;use client&quot;</code> at the top of the file.
               This converts it to a Client Component and disables SSR for that component.
             </p>
           </div>
