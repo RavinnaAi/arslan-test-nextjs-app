@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+/* Page Transition Animations - Smooth fade and slide */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pageFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+}
+
+/* Route transition overlay - subtle loading indicator */
+.route-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.route-transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Smooth page entrance */
+.page-entering {
+  animation: pageFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent layout shift during transitions */
+.page-transition-wrapper {
+  min-height: 100vh;
+}
+
+/* Smooth link transitions */
+a {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Page container animation - smooth fade in on load */
+.page-container {
+  animation: pageFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+/* Smooth transitions for interactive elements */
+button, a {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .page-container,
+  .page-entering,
+  .page-transition-wrapper {
+    animation: none;
+    transition: none;
+  }
+}
